@@ -5,11 +5,11 @@ function getComputerChoise () {
     if (ComputerChoice < 0.33) 
         return "камень";
 
-    else if (ComputerChoice > 0.66)
+    else if (ComputerChoice < 0.66)
         return "ножницы";
 
     else 
-    return "бумага";
+        return "бумага";
 
 }
 
@@ -19,42 +19,45 @@ function getHumanChoice () {
 }
 
 let HumanChoice = getHumanChoice().toLowerCase();
-let СomputerChoice = getComputerChoise;
+let СomputerChoice = getComputerChoise();
 
 let HumanScore = 0;
 let ComputerScore = 0;
 
 function PlayRound (ComputerChoice, HumanChoice) {
 
-    switch (true) {
-
-    case (ComputerChoice === "камень" && HumanChoice === "бумага"):
+    if (ComputerChoice === "камень" && HumanChoice === "бумага") {
         console.log("Поздравляю! Бумага бьет камень!");
-        break;
+        HumanScore++;
+    }
 
-    case (ComputerChoice === "камень" && HumanChoice === "ножницы"):
+    else if (ComputerChoice === "камень" && HumanChoice === "ножницы") {
         console.log("Увы! Камень бьет бумагу.");
-        break;
+        ComputerScore++;
+    }
 
-    case (ComputerChoice === "ножницы" && HumanChoice === "бумага"):
+    else if (ComputerChoice === "ножницы" && HumanChoice === "бумага") {
         console.log("Увы! Ножницы бьют бумагу.");
-        break;
+        ComputerScore++;
+    }
 
-    case (ComputerChoice === "ножницы" && HumanChoice === "камень"):
+    else if (ComputerChoice === "ножницы" && HumanChoice === "камень") {
         console.log("Поздравляю! Камень бьет ножницы!");
-        break;
+        HumanScore++;
+    } 
 
-    case (ComputerChoice === "бумага" && HumanChoice === "камень"):
+    else if (ComputerChoice === "бумага" && HumanChoice === "камень") {
         console.log("Увы! Бумага бьют камень.");
-        break;
+        ComputerScore++;
+    }
 
-    case (ComputerChoice === "бумага" && HumanChoice === "ножницы"):
+    else if (ComputerChoice === "бумага" && HumanChoice === "ножницы") {
         console.log("Поздравляю! Ножницы бьют бумагу!");
-        break;
+        HumanScore++;
+    }
 
-    default: 
+    else { 
         console.log("Ничья.");
-        break;
     }
 }
 

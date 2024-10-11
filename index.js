@@ -18,9 +18,6 @@ function getHumanChoice () {
     return HumanChoice;
 }
 
-let HumanChoice = getHumanChoice().toLowerCase();
-let СomputerChoice = getComputerChoise();
-
 let HumanScore = 0;
 let ComputerScore = 0;
 
@@ -61,7 +58,18 @@ function PlayRound (ComputerChoice, HumanChoice) {
     }
 }
 
-PlayRound(СomputerChoice, HumanChoice);
-console.log(ComputerScore);
-console.log(HumanScore);
 
+
+
+for (let i = 0; i < 5; i++) {
+    
+    console.log(`Раунд ${i + 1}`);
+    let HumanChoice = getHumanChoice().toLowerCase();
+    let СomputerChoice = getComputerChoise();
+    PlayRound(СomputerChoice, HumanChoice);
+    console.log(ComputerScore);
+    console.log(HumanScore);
+}
+
+
+console.log(("Результаты: Вы набрали " + HumanScore + " очков, компьютер - " + ComputerScore ));

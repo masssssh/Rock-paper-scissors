@@ -62,3 +62,6 @@ function PlayRound (ComputerChoice, HumanChoice) {
 }
 
 PlayRound(СomputerChoice, HumanChoice);
+console.log(ComputerScore);
+console.log(HumanScore);
+

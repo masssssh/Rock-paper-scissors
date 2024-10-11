@@ -1,14 +1,22 @@
 
 function getComputerChoise () {
 
-    let x = Math.random ( );
+    let ComputerChoice = Math.random ( );
 
-    if (x < 0.33) 
+    if (ComputerChoice < 0.33) 
         return "Камень";
-    else if (x > 0.66)
+    else if (ComputerChoice > 0.66)
         return "Ножницы";
     else 
     return "Бумага";
 
 }
+
+function getHumanChoice () {
+    let HumanChoice = prompt("Выберите камень, ножницы или бумагу");    
+    return HumanChoice;
+}
+let choice = getHumanChoice ();
+
+
 
